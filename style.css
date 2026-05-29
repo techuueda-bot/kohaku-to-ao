@@ -329,6 +329,7 @@ body {
   letter-spacing: 0.11em;
   line-height: 1.08;
   text-orientation: mixed;
+  white-space: nowrap;
   writing-mode: vertical-rl;
   z-index: 2;
 }
