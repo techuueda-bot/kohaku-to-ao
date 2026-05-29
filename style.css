@@ -324,10 +324,10 @@ body {
   position: absolute;
   margin: 0;
   color: rgba(31, 36, 40, 0.84);
-  font-size: clamp(4.2rem, 8.6vw, 8.8rem);
+  font-size: clamp(3.6rem, 6.4vw, 6.8rem);
   font-weight: 400;
-  letter-spacing: 0.15em;
-  line-height: 1.12;
+  letter-spacing: 0.11em;
+  line-height: 1.08;
   text-orientation: mixed;
   writing-mode: vertical-rl;
   z-index: 2;
