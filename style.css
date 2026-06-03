@@ -738,13 +738,20 @@ body {
   }
 
   .bowl-graphic {
-    width: clamp(230px, 76vw, 330px);
+    width: clamp(220px, 70vw, 310px);
     justify-self: end;
+    box-shadow:
+      inset 0 0 0 1px rgba(6, 24, 34, 0.18),
+      inset 0 0 0 10px rgba(247, 243, 234, 0.026),
+      inset 0 0 0 18px rgba(8, 31, 48, 0.08),
+      inset 0 0 48px rgba(3, 15, 22, 0.1),
+      inset 0 0 70px rgba(247, 243, 234, 0.045),
+      0 20px 64px rgba(31, 36, 40, 0.06);
     transform: translate(18vw, -1vh) scale(0.96);
   }
 
   .title-stage.is-visible .bowl-graphic {
-    opacity: 0.28;
+    opacity: 0.24;
     transform: translate(12vw, -1vh) scale(1);
   }
 
@@ -928,12 +935,12 @@ body {
   }
 
   .bowl-graphic {
-    width: clamp(210px, 72vw, 300px);
+    width: clamp(200px, 66vw, 280px);
     transform: translate(20vw, -1vh) scale(0.96);
   }
 
   .title-stage.is-visible .bowl-graphic {
-    opacity: 0.24;
+    opacity: 0.2;
     transform: translate(14vw, -1vh) scale(1);
   }
 
