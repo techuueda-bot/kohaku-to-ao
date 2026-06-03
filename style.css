@@ -156,13 +156,17 @@ body {
   aspect-ratio: 1;
   border-radius: 50%;
   background:
-    radial-gradient(ellipse at 50% 47%, rgba(225, 158, 64, 0.26) 0 10%, rgba(205, 130, 42, 0.14) 23%, transparent 40%),
-    radial-gradient(ellipse at 48% 48%, rgba(46, 101, 116, 0.42) 0 34%, rgba(18, 67, 86, 0.72) 49%, transparent 51%),
-    radial-gradient(circle at 50% 50%, rgba(12, 43, 62, 0.94) 0 60%, rgba(8, 31, 48, 0.86) 72%, rgba(7, 24, 34, 0.46) 100%);
+    radial-gradient(ellipse at 50% 47%, rgba(224, 160, 69, 0.24) 0 8%, rgba(186, 110, 38, 0.13) 20%, transparent 36%),
+    radial-gradient(circle at 50% 50%, rgba(247, 243, 234, 0.1) 0 29%, transparent 31%),
+    radial-gradient(circle at 50% 50%, transparent 0 37%, rgba(247, 243, 234, 0.07) 39%, transparent 43%, rgba(8, 32, 46, 0.16) 47%, transparent 51%),
+    radial-gradient(ellipse at 48% 48%, rgba(48, 104, 119, 0.42) 0 33%, rgba(17, 68, 87, 0.74) 49%, transparent 52%),
+    radial-gradient(circle at 50% 50%, rgba(12, 43, 62, 0.94) 0 58%, rgba(8, 31, 48, 0.9) 72%, rgba(6, 21, 31, 0.58) 100%);
   box-shadow:
-    inset 0 0 0 1px rgba(247, 243, 234, 0.14),
-    inset 0 0 0 20px rgba(247, 243, 234, 0.035),
-    inset 0 0 78px rgba(247, 243, 234, 0.07),
+    inset 0 0 0 1px rgba(6, 24, 34, 0.24),
+    inset 0 0 0 12px rgba(247, 243, 234, 0.032),
+    inset 0 0 0 23px rgba(8, 31, 48, 0.12),
+    inset 0 0 62px rgba(3, 15, 22, 0.16),
+    inset 0 0 86px rgba(247, 243, 234, 0.06),
     0 28px 90px rgba(31, 36, 40, 0.08);
   opacity: 0;
   transform: translateX(10vw) scale(0.96);
@@ -182,20 +186,23 @@ body {
 .bowl-graphic::before {
   inset: 17%;
   background:
-    radial-gradient(ellipse at 48% 44%, rgba(238, 181, 86, 0.3), transparent 24%),
-    radial-gradient(ellipse at 58% 56%, rgba(143, 83, 31, 0.14), transparent 36%),
-    radial-gradient(circle at 50% 50%, rgba(247, 220, 159, 0.1), transparent 48%);
-  filter: blur(18px);
-  opacity: 0.72;
+    radial-gradient(ellipse at 48% 44%, rgba(238, 181, 86, 0.28), transparent 22%),
+    radial-gradient(ellipse at 58% 56%, rgba(143, 83, 31, 0.13), transparent 36%),
+    radial-gradient(circle at 50% 50%, rgba(247, 220, 159, 0.09), transparent 48%);
+  filter: blur(20px);
+  opacity: 0.68;
 }
 
 .bowl-graphic::after {
-  inset: 6.5%;
-  border: 1px solid rgba(247, 243, 234, 0.16);
+  inset: 5.5%;
+  border: 1px solid rgba(247, 243, 234, 0.18);
   background:
-    radial-gradient(ellipse at 51% 48%, transparent 0 38%, rgba(247, 243, 234, 0.075) 40%, transparent 45%),
+    radial-gradient(ellipse at 51% 48%, transparent 0 35%, rgba(247, 243, 234, 0.08) 38%, transparent 43%, rgba(6, 24, 34, 0.16) 53%, transparent 60%),
     linear-gradient(135deg, transparent 24%, rgba(247, 243, 234, 0.07), transparent 52%),
     radial-gradient(circle at 34% 28%, rgba(247, 243, 234, 0.065), transparent 18%);
+  box-shadow:
+    inset 0 0 0 9px rgba(247, 243, 234, 0.028),
+    inset 0 0 42px rgba(3, 14, 20, 0.14);
   opacity: 0.7;
 }
 
