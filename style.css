@@ -1093,33 +1093,69 @@ a {
 
 .season {
   position: relative;
+  padding-top: 0;
   overflow: hidden;
   color: var(--color-paper);
   background: var(--color-indigo);
 }
 
-.season__orb {
-  position: absolute;
-  top: -12rem;
-  right: -16rem;
-  width: min(42rem, 90vw);
-  aspect-ratio: 1;
-  border-radius: 50%;
-  background:
-    radial-gradient(circle at 34% 34%, rgba(255, 240, 196, 0.42), transparent 14%),
-    radial-gradient(circle, var(--color-amber-light), #a86422 68%, #744214);
-  box-shadow: 0 0 90px rgba(229, 189, 120, 0.22);
-  opacity: 0.82;
+.season__grid {
+  display: grid;
+  gap: 2.5rem;
 }
 
-.season__grid {
-  position: relative;
-  display: grid;
-  gap: 3rem;
+.season__intro {
+  max-width: 38rem;
+  padding-top: 0.5rem;
 }
 
 .section-kicker--light {
   color: var(--color-amber-light);
+}
+
+.season__feature {
+  position: relative;
+  display: block;
+  width: calc(100% + 2.5rem);
+  margin: 0 -1.25rem;
+  padding: 0;
+  overflow: hidden;
+  color: var(--color-paper);
+  border: 0;
+  background: var(--color-indigo-deep);
+  text-align: left;
+  cursor: pointer;
+}
+
+.season__feature::after {
+  position: absolute;
+  inset: 0;
+  content: "";
+  background: rgba(7, 27, 37, 0.24);
+  pointer-events: none;
+}
+
+.season__feature img {
+  width: 100%;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+  transition: transform 0.8s var(--ease-out-expo);
+}
+
+.season__feature span {
+  position: absolute;
+  right: 1rem;
+  bottom: 0.9rem;
+  z-index: 1;
+  padding-bottom: 0.2rem;
+  border-bottom: 1px solid var(--color-amber-light);
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+}
+
+.season__feature:hover img,
+.season__feature:focus-visible img {
+  transform: scale(1.04);
 }
 
 .season__copy {
@@ -1131,25 +1167,55 @@ a {
   margin: 0;
 }
 
-.season__copy dl {
+.season__availability {
   display: grid;
-  margin: 3rem 0 0;
+  margin: 2.5rem 0 0;
   grid-template-columns: repeat(2, 1fr);
   border-top: 1px solid rgba(243, 238, 227, 0.24);
+  border-bottom: 1px solid rgba(243, 238, 227, 0.24);
 }
 
-.season__copy dl div {
-  padding: 1rem 1rem 0 0;
+.season__availability div {
+  padding: 1rem 1rem 1.1rem 0;
 }
 
-.season__copy dt {
+.season__availability dt {
   color: var(--color-amber-light);
   font-size: 0.68rem;
 }
 
-.season__copy dd {
+.season__availability dd {
   margin: 0.2rem 0 0;
   font-family: var(--font-display);
+}
+
+.season__availability strong {
+  color: var(--color-amber-light);
+  font-size: clamp(1.85rem, 7vw, 3rem);
+  font-weight: 500;
+  line-height: 0;
+}
+
+.season__reservation {
+  display: inline-flex;
+  margin-top: 1.5rem;
+  padding: 0.78rem 1rem;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-indigo-deep);
+  background: var(--color-amber-light);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-decoration: none;
+  transition: color var(--duration-fast), background var(--duration-fast), transform var(--duration-fast);
+}
+
+.season__reservation:hover,
+.season__reservation:focus-visible {
+  color: var(--color-paper);
+  background: var(--color-amber);
+  transform: translateY(-2px);
 }
 
 .access {
@@ -1522,6 +1588,13 @@ a {
   font-weight: 700;
   letter-spacing: 0.06em;
   text-decoration: none;
+  transition: opacity var(--duration-fast), transform var(--duration-fast);
+}
+
+body.is-viewing-season .mobile-reserve {
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(1rem);
 }
 
 .motion-toggle {
@@ -1679,6 +1752,27 @@ a {
     grid-template-columns: minmax(0, 1fr) minmax(0, 0.8fr);
     align-items: end;
     gap: 8vw;
+  }
+
+  .season {
+    padding-top: var(--space-section);
+  }
+
+  .season__intro {
+    grid-column: 1;
+  }
+
+  .season__feature {
+    grid-column: 1;
+    grid-row: 2;
+    width: 100%;
+    margin: 0;
+  }
+
+  .season__copy {
+    grid-column: 2;
+    grid-row: 1 / span 2;
+    align-self: center;
   }
 
   .access__grid {

@@ -165,6 +165,23 @@
     lastMenuTrigger?.focus();
   });
 
+  const seasonSection = document.querySelector("#season");
+  const mobileReserve = document.querySelector(".mobile-reserve");
+
+  if (seasonSection && mobileReserve) {
+    const updateSeasonReserve = () => {
+      const rect = seasonSection.getBoundingClientRect();
+      const visibleHeight = Math.min(rect.bottom, window.innerHeight) - Math.max(rect.top, 0);
+      const minimumVisibleHeight = Math.min(rect.height, window.innerHeight) * 0.28;
+      document.body.classList.toggle("is-viewing-season", visibleHeight > minimumVisibleHeight);
+    };
+
+    window.addEventListener("scroll", updateSeasonReserve, { passive: true });
+    window.addEventListener("resize", updateSeasonReserve);
+    window.addEventListener("load", updateSeasonReserve);
+    updateSeasonReserve();
+  }
+
   const revealObserver = new IntersectionObserver(
     (entries, observer) => {
       entries.forEach((entry) => {

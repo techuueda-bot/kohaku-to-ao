@@ -264,26 +264,46 @@
       </section>
 
       <section id="season" class="season section" aria-labelledby="season-title">
-        <div class="season__orb" aria-hidden="true"></div>
         <div class="section__shell season__grid">
-          <div data-reveal>
+          <button
+            class="season__feature"
+            type="button"
+            data-menu-id="season"
+            aria-haspopup="dialog"
+            data-reveal
+            data-reveal-delay="0.08"
+          >
+            <img
+              src="assets/images/menu-season-1200.webp"
+              width="1200"
+              height="800"
+              loading="lazy"
+              decoding="async"
+              alt="青柚子と青菜を添えた、季節限定の中華そば"
+            />
+            <span>季節の一杯を写真で見る</span>
+          </button>
+
+          <div class="season__intro" data-reveal>
             <p class="section-kicker section-kicker--light">Season note / 季節の便り</p>
             <h2 id="season-title">雨あがりの、<br />青柚子。</h2>
           </div>
+
           <div class="season__copy" data-reveal data-reveal-delay="0.12">
             <p>
               夏の入り口だけに届く青柚子を、琥珀のスープへひと削り。湯気の中でほどける香りが、雨上がりの空気を連れてきます。
             </p>
-            <dl>
+            <dl class="season__availability">
               <div>
                 <dt>提供期間</dt>
                 <dd>六月下旬〜八月</dd>
               </div>
               <div>
                 <dt>一日</dt>
-                <dd>十二杯限定</dd>
+                <dd><strong>十二</strong>杯限定</dd>
               </div>
             </dl>
+            <a class="season__reservation" href="#reservation">この一杯を予約で相談する</a>
           </div>
         </div>
       </section>
