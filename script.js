@@ -77,11 +77,49 @@
     revealObserver.observe(element);
   });
 
+  const storySection = document.querySelector(".story-scroll");
+  const storyTrack = document.querySelector("[data-horizontal-track]");
+  const storyProgress = document.querySelector(".story-scroll__progress");
+  const desktopStoryMedia = window.matchMedia("(min-width: 1024px)");
+  let storyMaxShift = 0;
   let frameRequested = false;
+
+  const clamp = (number, min, max) => Math.min(Math.max(number, min), max);
+
+  const storyMotionIsEnabled = () =>
+    desktopStoryMedia.matches && !(reducedMedia.matches && motionStopped);
+
+  const measureStoryScroll = () => {
+    if (!storySection || !storyTrack) return;
+
+    const isEnabled = storyMotionIsEnabled();
+    storySection.classList.toggle("is-horizontal-enabled", isEnabled);
+
+    if (!isEnabled) {
+      storyMaxShift = 0;
+      storySection.style.removeProperty("--story-scroll-distance");
+      storyTrack.style.removeProperty("--story-shift");
+      storyProgress?.style.removeProperty("--story-progress");
+      return;
+    }
+
+    storyMaxShift = Math.max(storyTrack.scrollWidth - window.innerWidth, 0);
+    const verticalDistance = Math.max(storyMaxShift, Math.round(window.innerHeight * 1.4));
+    storySection.style.setProperty("--story-scroll-distance", `${verticalDistance}px`);
+  };
 
   const updateScrollEffects = () => {
     frameRequested = false;
     header?.classList.toggle("is-scrolled", window.scrollY > 32);
+
+    if (!storySection || !storyTrack || !storyMotionIsEnabled()) return;
+
+    const scrollRange = Math.max(storySection.offsetHeight - window.innerHeight, 1);
+    const sectionScroll = window.scrollY - storySection.offsetTop;
+    const progress = clamp(sectionScroll / scrollRange, 0, 1);
+
+    storyTrack.style.setProperty("--story-shift", `${-progress * storyMaxShift}px`);
+    storyProgress?.style.setProperty("--story-progress", progress.toFixed(4));
   };
 
   const requestScrollUpdate = () => {
@@ -90,8 +128,17 @@
     window.requestAnimationFrame(updateScrollEffects);
   };
 
+  const handleViewportChange = () => {
+    measureStoryScroll();
+    requestScrollUpdate();
+  };
+
   window.addEventListener("scroll", requestScrollUpdate, { passive: true });
-  window.addEventListener("resize", requestScrollUpdate);
+  window.addEventListener("resize", handleViewportChange);
+  window.addEventListener("load", handleViewportChange);
+  desktopStoryMedia.addEventListener("change", handleViewportChange);
+  document.fonts?.ready.then(handleViewportChange);
+  measureStoryScroll();
   updateScrollEffects();
 
   const dateInput = document.querySelector("#guest-date");
