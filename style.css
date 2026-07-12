@@ -1153,6 +1153,20 @@ a {
   letter-spacing: 0.08em;
 }
 
+.season__feature-limited {
+  top: 1rem;
+  left: 1rem;
+  right: auto !important;
+  bottom: auto !important;
+  padding: 0.45rem 0.65rem !important;
+  color: var(--color-indigo-deep);
+  border: 0 !important;
+  background: var(--color-amber-light);
+  font-size: 0.65rem !important;
+  font-weight: 700;
+  letter-spacing: 0.1em !important;
+}
+
 .season__feature:hover img,
 .season__feature:focus-visible img {
   transform: scale(1.04);
@@ -1169,7 +1183,7 @@ a {
 
 .season__availability {
   display: grid;
-  margin: 2.5rem 0 0;
+  margin: 1.5rem 0 0;
   grid-template-columns: repeat(2, 1fr);
   border-top: 1px solid rgba(243, 238, 227, 0.24);
   border-bottom: 1px solid rgba(243, 238, 227, 0.24);
@@ -1189,15 +1203,41 @@ a {
   font-family: var(--font-display);
 }
 
-.season__availability strong {
+.season__limited {
+  display: grid;
+  margin: 2.5rem 0 0;
+  padding: 1.35rem 0;
+  place-items: center;
+  border-top: 1px solid rgba(229, 189, 120, 0.72);
+  border-bottom: 1px solid rgba(229, 189, 120, 0.72);
   color: var(--color-amber-light);
-  font-size: clamp(1.85rem, 7vw, 3rem);
+  font-family: var(--font-display);
+  line-height: 1;
+}
+
+.season__limited span {
+  font-size: 0.72rem;
+  letter-spacing: 0.18em;
+}
+
+.season__limited strong {
+  margin-top: 0.45rem;
+  font-size: clamp(3.6rem, 18vw, 6.4rem);
   font-weight: 500;
-  line-height: 0;
+  letter-spacing: -0.04em;
+}
+
+.season__limited em {
+  margin-top: 0.35rem;
+  font-size: 0.78rem;
+  font-style: normal;
+  letter-spacing: 0.12em;
 }
 
 .season__reservation {
-  display: inline-flex;
+  display: flex;
+  width: 100%;
+  min-height: 4.25rem;
   margin-top: 1.5rem;
   padding: 0.78rem 1rem;
   align-items: center;
