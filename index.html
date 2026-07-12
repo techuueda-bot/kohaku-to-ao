@@ -1,189 +1,413 @@
 <!doctype html>
 <html lang="ja">
   <head>
-    <script>
-      if ("scrollRestoration" in history) {
-        history.scrollRestoration = "manual";
-      }
-
-      document.documentElement.style.scrollBehavior = "auto";
-      window.scrollTo(0, 0);
-    </script>
-    <meta charset="utf-8" />
+    <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta
       name="description"
-      content="架空の中華そば店「琥珀と青」の1ページブランドサイト。"
+      content="雨上がりの路地で、心を整える一杯。架空の中華そば店『琥珀と青』のポートフォリオ用ブランドサイトです。"
     />
-    <title>琥珀と青 | 架空中華そば店ブランドサイト</title>
-    <link rel="icon" type="image/png" href="assets/logo/favicon.png" />
+    <meta name="theme-color" content="#102d3d" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="琥珀と青｜雨上がりに、心を整える一杯" />
+    <meta
+      property="og:description"
+      content="深い青の器に、澄んだ琥珀のスープ。架空の中華そば店を題材にしたブランドサイトです。"
+    />
+    <meta property="og:url" content="https://techuueda-bot.github.io/kohaku-to-ao/" />
+    <meta
+      property="og:image"
+      content="https://techuueda-bot.github.io/kohaku-to-ao/assets/images/ogp-kohaku-to-ao.jpg"
+    />
+    <meta property="og:site_name" content="琥珀と青" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="canonical" href="https://techuueda-bot.github.io/kohaku-to-ao/" />
+    <link rel="icon" type="image/png" href="assets/logo/favicon-64.png" />
     <link rel="shortcut icon" href="assets/logo/favicon.ico" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;500;600&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="preload"
+      as="image"
+      href="assets/images/hero-chuka-soba-1536.webp"
+    />
+    <title>琥珀と青｜雨上がりに、心を整える一杯</title>
     <link rel="stylesheet" href="./style.css" />
   </head>
-  <body>
-    <main>
-      <section class="intro" aria-labelledby="site-title">
-        <div class="opening-overlay" aria-hidden="true"></div>
-        <div class="site-brand-mark" aria-hidden="true">
-          <img src="./assets/logo/kohaku-to-ao-mark-transparent.png" alt="" />
-        </div>
+  <body class="p-home">
+    <a class="skip-link" href="#main-content">本文へ移動</a>
 
-        <div class="title-stage">
-          <div class="hero-text">
-            <h1 id="site-title" class="hero-title">琥珀と青</h1>
-            <p class="hero-copy">
-              青い器に、<br />
-              琥珀の一杯を。
-            </p>
-            <p class="hero-note">
-              雨のあと、静かに暖簾をくぐる。<br />
-              一杯の中に、日々を少し整える時間を。
-            </p>
-          </div>
-          <div class="bowl-graphic" aria-hidden="true"></div>
-        </div>
-      </section>
+    <p class="demo-ribbon">
+      <span>Portfolio demo</span>
+      架空店舗のため、予約情報は送信されません
+    </p>
 
-      <section class="horizontal-section" aria-label="思想の横スクロール">
-        <div class="horizontal-sticky">
-          <div class="horizontal-track">
-            <article class="panel panel--one">
-              <h2 class="vertical-title">青に<br />沈む</h2>
-              <p class="panel-caption">深い青の器に、静けさが落ちていく。</p>
-            </article>
-            <article class="panel panel--two">
-              <h2 class="vertical-title">琥珀が<br />満ちる</h2>
-              <p class="panel-caption">澄んだ色が、ゆっくりと時間を満たす。</p>
-            </article>
-            <article class="panel panel--three">
-              <h2 class="vertical-title">湯気の<br />向こう</h2>
-              <p class="panel-caption">ひとりの時間に、湯気だけが立ちのぼる。</p>
-            </article>
-            <article class="panel panel--four">
-              <h2 class="vertical-title">食後の<br />余韻</h2>
-              <p class="panel-caption">強く残るのではなく、あとから戻ってくる味。</p>
-            </article>
-            <article class="panel panel--five">
-              <h2 class="vertical-title">また雨の日に</h2>
-              <p class="panel-caption">思い出すきっかけは、小さな光でいい。</p>
-            </article>
-            <article class="panel panel--blank">
-              <p class="blank-text">また、歩き出す。</p>
-            </article>
-          </div>
-        </div>
-      </section>
+    <header class="site-header" data-header>
+      <a class="site-header__brand" href="#top" aria-label="琥珀と青 トップへ">
+        <img
+          src="./assets/logo/kohaku-mark-256.webp"
+          width="56"
+          height="56"
+          alt=""
+        />
+        <span>琥珀と青</span>
+      </a>
 
-      <section class="after-section" aria-label="通常スクロール前の余白"></section>
-
-      <section class="concept-section">
-        <div class="concept-heading">
-          <p class="section-label">Concept</p>
-          <h2>青い器に、琥珀の一杯を。</h2>
-        </div>
-        <div class="concept-body">
-          <p>
-            「琥珀と青」は、青い器と琥珀色のスープを象徴にした、架空の中華そば店です。
-          </p>
-          <p>
-            にぎやかさよりも、落ち着き。強い味の主張よりも、食べ終えたあとに静かに残る余韻。
-          </p>
-          <p>
-            一杯の中に、日々を少し整える時間を込めています。
-          </p>
-        </div>
-      </section>
-
-      <section class="menu-section">
-        <p class="section-label">Menu</p>
-        <h2>一杯を選ぶ。</h2>
-
-        <div class="menu-list">
-          <article class="menu-item">
-            <p class="menu-number">01</p>
-            <h3>中華そば 琥珀</h3>
-            <p class="menu-price">980円</p>
-            <p class="menu-description">
-              澄んだ醤油の香りと、細麺のやさしい口あたり。
-              はじめての方にも選びやすい、店の基本となる一杯。
-            </p>
-          </article>
-
-          <article class="menu-item">
-            <p class="menu-number">02</p>
-            <h3>中華そば 青</h3>
-            <p class="menu-price">1,050円</p>
-            <p class="menu-description">
-              青菜と香味油のすっきりした香り。
-              軽やかで、昼にも夜にも寄り添う一杯。
-            </p>
-          </article>
-
-          <article class="menu-item">
-            <p class="menu-number">03</p>
-            <h3>季節の一杯</h3>
-            <p class="menu-price">1,180円</p>
-            <p class="menu-description">
-              その時期の空気に合わせて仕立てる、数量限定の中華そば。
-              詳細は店頭にて。
-            </p>
-          </article>
-        </div>
-      </section>
-
-      <section
-        class="season-note-section"
-        aria-labelledby="season-note-title"
-        data-section-role="seasonal-note"
+      <button
+        class="site-header__menu-button"
+        type="button"
+        aria-expanded="false"
+        aria-controls="global-navigation"
       >
-        <div class="season-note-inner">
-          <p class="section-label">Season Note</p>
-          <h2 id="season-note-title">雨あがりの、琥珀。</h2>
-          <p>
-            雨があがったあとの道には、少しだけ光が残っている。
-            器の中の琥珀色も、そんな光に似ている。
+        <span class="site-header__menu-icon" aria-hidden="true"></span>
+        <span class="site-header__menu-label">メニュー</span>
+      </button>
+
+      <nav id="global-navigation" class="site-header__nav" aria-label="メインナビゲーション">
+        <a href="#concept">私たちの一杯</a>
+        <a href="#menu">お品書き</a>
+        <a href="#season">季節の便り</a>
+        <a href="#access">店舗案内</a>
+        <a class="button button--small" href="#reservation">席を予約する</a>
+      </nav>
+    </header>
+
+    <main id="main-content">
+      <section id="top" class="hero" aria-labelledby="hero-title">
+        <picture class="hero__media">
+          <img
+            src="assets/images/hero-chuka-soba-1536.webp"
+            width="1536"
+            height="1024"
+            alt="深い青の器に盛られた、琥珀色の澄んだ中華そば"
+            fetchpriority="high"
+          />
+        </picture>
+        <div class="hero__shade" aria-hidden="true"></div>
+        <div class="hero__content">
+          <p class="hero__eyebrow">架空中華そば店・鹿児島</p>
+          <h1 id="hero-title" class="hero__title">
+            <span>雨上がりに、</span>
+            <span>心を整える一杯。</span>
+          </h1>
+          <p class="hero__lead">
+            深い青の器に、澄んだ琥珀のスープ。<br />
+            急がない時間を、どうぞ。
           </p>
-          <p>
-            急がず、けれど冷めないうちに。
-            今日の一杯は、静かに始まる。
-          </p>
+          <div class="hero__actions">
+            <a class="button button--amber" href="#reservation">席の予約を相談する</a>
+            <a class="text-link text-link--light" href="#menu">お品書きを見る</a>
+          </div>
+          <dl class="hero__facts" aria-label="店舗概要">
+            <div>
+              <dt>昼</dt>
+              <dd>11:00–15:00</dd>
+            </div>
+            <div>
+              <dt>夜</dt>
+              <dd>18:00–21:00</dd>
+            </div>
+            <div>
+              <dt>休</dt>
+              <dd>水曜日</dd>
+            </div>
+          </dl>
+        </div>
+        <a class="hero__scroll" href="#concept">
+          <span>Scroll</span>
+          <i aria-hidden="true"></i>
+        </a>
+      </section>
+
+      <section id="concept" class="concept section">
+        <div class="section__shell concept__grid">
+          <div class="concept__heading" data-reveal>
+            <p class="section-kicker">Our bowl / 私たちの一杯</p>
+            <h2>
+              青に沈み、<br />
+              琥珀にほどける。
+            </h2>
+          </div>
+          <div class="concept__copy" data-reveal data-reveal-delay="0.12">
+            <p class="concept__lead">
+              強さではなく、澄み方で記憶に残る。そんな一杯を目指しています。
+            </p>
+            <p>
+              鶏と魚介をゆっくり重ねた清湯に、香りの輪郭だけを残す醤油だれ。細麺をすすったあと、青い器の底に小さな光が残ります。
+            </p>
+            <p>
+              雨の日も、晴れの日も。暖簾の先で、日々を少し整える時間を用意してお待ちしています。
+            </p>
+          </div>
+          <blockquote class="concept__quote" data-reveal>
+            <span>一杯に、余白を。</span>
+            <small>琥珀と青の仕立て</small>
+          </blockquote>
         </div>
       </section>
 
-      <section class="access-section">
-        <div class="access-inner">
-          <p class="section-label">Access</p>
-          <h2>静かな路地の、その先に。</h2>
+      <section id="menu" class="menu section" aria-labelledby="menu-title">
+        <div class="section__shell">
+          <div class="section-heading" data-reveal>
+            <p class="section-kicker">Menu / お品書き</p>
+            <h2 id="menu-title">今日の気分に、<br />静かな一杯を。</h2>
+            <p>三つの味からお選びいただけます。</p>
+          </div>
 
-          <div class="access-info">
+          <div class="menu__layout">
+            <figure class="menu__visual" data-reveal>
+              <img
+                src="assets/images/hero-chuka-soba-960.webp"
+                width="960"
+                height="640"
+                loading="lazy"
+                decoding="async"
+                alt="青い器に入った中華そば 琥珀"
+              />
+              <figcaption>中華そば 琥珀</figcaption>
+            </figure>
+
+            <div class="menu__list">
+              <article class="menu-item" data-reveal>
+                <p class="menu-item__number">01</p>
+                <div>
+                  <h3>中華そば 琥珀</h3>
+                  <p>澄んだ醤油の香りと、細麺のやさしい口あたり。</p>
+                </div>
+                <p class="menu-item__price">980円</p>
+              </article>
+              <article class="menu-item" data-reveal data-reveal-delay="0.08">
+                <p class="menu-item__number">02</p>
+                <div>
+                  <h3>中華そば 青</h3>
+                  <p>青菜と香味油の清々しさを重ねた、軽やかな一杯。</p>
+                </div>
+                <p class="menu-item__price">1,050円</p>
+              </article>
+              <article class="menu-item" data-reveal data-reveal-delay="0.16">
+                <p class="menu-item__number">03</p>
+                <div>
+                  <h3>季節の一杯</h3>
+                  <p>その日の空気に合わせて仕立てる、数量限定の味。</p>
+                </div>
+                <p class="menu-item__price">1,180円</p>
+              </article>
+              <p class="menu__note">※価格・内容はポートフォリオ用の架空設定です。</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="story-scroll" aria-label="琥珀と青の一杯ができるまで">
+        <div class="story-scroll__sticky">
+          <div class="story-scroll__intro">
+            <p>From blue to amber</p>
+            <span>一杯ができるまで</span>
+          </div>
+          <div class="story-scroll__viewport">
+            <div class="story-scroll__track" data-horizontal-track>
+              <article class="story-card story-card--blue">
+                <p class="story-card__step">一 / 器</p>
+                <h2>青に、<br />静けさを置く。</h2>
+                <p>手の中で落ち着く深い青。料理の色を受け止める余白から、一杯は始まります。</p>
+              </article>
+              <article class="story-card story-card--steam">
+                <p class="story-card__step">二 / 出汁</p>
+                <h2>湯気の向こうに、<br />輪郭を残す。</h2>
+                <p>鶏の旨みと魚介の香りを、濁らせずに重ねる。強く押さず、長く続く味へ。</p>
+              </article>
+              <article class="story-card story-card--amber">
+                <p class="story-card__step">三 / 琥珀</p>
+                <h2>光を、<br />一杯に満たす。</h2>
+                <p>雨上がりの路地に差す光のように、澄んだ琥珀色が器の中に広がります。</p>
+              </article>
+              <article class="story-card story-card--after">
+                <p class="story-card__step">四 / 余韻</p>
+                <h2>また来る理由は、<br />小さくていい。</h2>
+                <p>食べ終えたあとに残る、静かな温度。その記憶を暖簾の外まで持ち帰ってください。</p>
+              </article>
+            </div>
+          </div>
+          <div class="story-scroll__progress" aria-hidden="true"><span></span></div>
+        </div>
+      </section>
+
+      <section id="season" class="season section" aria-labelledby="season-title">
+        <div class="season__orb" aria-hidden="true"></div>
+        <div class="section__shell season__grid">
+          <div data-reveal>
+            <p class="section-kicker section-kicker--light">Season note / 季節の便り</p>
+            <h2 id="season-title">雨あがりの、<br />青柚子。</h2>
+          </div>
+          <div class="season__copy" data-reveal data-reveal-delay="0.12">
+            <p>
+              夏の入り口だけに届く青柚子を、琥珀のスープへひと削り。湯気の中でほどける香りが、雨上がりの空気を連れてきます。
+            </p>
             <dl>
+              <div>
+                <dt>提供期間</dt>
+                <dd>六月下旬〜八月</dd>
+              </div>
+              <div>
+                <dt>一日</dt>
+                <dd>十二杯限定</dd>
+              </div>
+            </dl>
+          </div>
+        </div>
+      </section>
+
+      <section id="access" class="access section" aria-labelledby="access-title">
+        <div class="section__shell access__grid">
+          <div class="access__map" aria-hidden="true" data-reveal>
+            <div class="access__map-line access__map-line--one"></div>
+            <div class="access__map-line access__map-line--two"></div>
+            <div class="access__pin"><span>琥珀と青</span></div>
+            <p>静かな路地の、その先。</p>
+          </div>
+
+          <div class="access__content" data-reveal data-reveal-delay="0.12">
+            <p class="section-kicker">Access / 店舗案内</p>
+            <h2 id="access-title">暖簾をくぐるまで。</h2>
+            <dl class="access__details">
               <div>
                 <dt>住所</dt>
                 <dd>鹿児島県架空市青町 1-7-5</dd>
               </div>
               <div>
                 <dt>営業時間</dt>
-                <dd>11:00 - 15:00 / 18:00 - 21:00</dd>
+                <dd>11:00–15:00 / 18:00–21:00</dd>
               </div>
               <div>
                 <dt>定休日</dt>
                 <dd>水曜日</dd>
               </div>
+              <div>
+                <dt>席数</dt>
+                <dd>カウンター 10席</dd>
+              </div>
             </dl>
+            <p class="notice-box">
+              この住所・営業時間・店舗情報はすべて架空です。実在の店舗とは関係ありません。
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="faq section" aria-labelledby="faq-title">
+        <div class="section__shell faq__grid">
+          <div class="section-heading" data-reveal>
+            <p class="section-kicker">Before your visit / ご来店前に</p>
+            <h2 id="faq-title">よくあるご質問</h2>
+          </div>
+          <div class="faq__list" data-reveal data-reveal-delay="0.1">
+            <details>
+              <summary>予約なしでも利用できますか？</summary>
+              <p>はい。架空設定上では当日席もご用意しています。混雑時はお待ちいただく場合があります。</p>
+            </details>
+            <details>
+              <summary>子どもと一緒に入れますか？</summary>
+              <p>カウンターのみの小さな店という設定です。小さなお子さま用の椅子は用意していません。</p>
+            </details>
+            <details>
+              <summary>予約フォームから本当に送信されますか？</summary>
+              <p>いいえ。このサイトはポートフォリオ用デモのため、入力内容は保存・送信されません。</p>
+            </details>
+          </div>
+        </div>
+      </section>
+
+      <section id="reservation" class="reservation section" aria-labelledby="reservation-title">
+        <div class="section__shell reservation__grid">
+          <div class="reservation__intro" data-reveal>
+            <p class="section-kicker">Reservation demo / 予約デモ</p>
+            <h2 id="reservation-title">一席、<br />とっておきます。</h2>
+            <p>
+              ご希望を入力すると、予約完了までの動きを体験できます。入力内容が外部へ送信されることはありません。
+            </p>
+            <ul>
+              <li>入力はこのブラウザ内だけで処理</li>
+              <li>個人情報の保存・送信なし</li>
+              <li>送信後にデモ完了メッセージを表示</li>
+            </ul>
           </div>
 
-          <p class="fiction-note">
-            ※この店舗は架空の制作物です。実在する店舗・住所・営業情報ではありません。
-          </p>
+          <form class="reservation-form" action="#reservation" method="get" data-demo-form novalidate>
+            <p class="reservation-form__demo">Demo form — 実際の予約は成立しません</p>
+
+            <div class="form-field">
+              <label for="guest-name">お名前 <span>必須</span></label>
+              <input id="guest-name" name="name" type="text" autocomplete="name" required />
+              <p id="guest-name-error" class="form-field__error" aria-live="polite"></p>
+            </div>
+
+            <div class="form-field">
+              <label for="guest-email">メールアドレス <span>必須</span></label>
+              <input id="guest-email" name="email" type="email" autocomplete="email" required />
+              <p id="guest-email-error" class="form-field__error" aria-live="polite"></p>
+            </div>
+
+            <div class="form-row">
+              <div class="form-field">
+                <label for="guest-date">希望日 <span>必須</span></label>
+                <input id="guest-date" name="date" type="date" required />
+                <p id="guest-date-error" class="form-field__error" aria-live="polite"></p>
+              </div>
+              <div class="form-field">
+                <label for="guest-count">人数 <span>必須</span></label>
+                <select id="guest-count" name="count" required>
+                  <option value="">選択してください</option>
+                  <option value="1">1名</option>
+                  <option value="2">2名</option>
+                  <option value="3">3名</option>
+                  <option value="4">4名</option>
+                </select>
+                <p id="guest-count-error" class="form-field__error" aria-live="polite"></p>
+              </div>
+            </div>
+
+            <div class="form-field form-field--honeypot" aria-hidden="true">
+              <label for="company-name">会社名</label>
+              <input id="company-name" name="company" type="text" tabindex="-1" autocomplete="off" />
+            </div>
+
+            <button class="button button--ink reservation-form__submit" type="submit">
+              予約内容を確認する
+            </button>
+            <p class="reservation-form__privacy">
+              デモのため、プライバシーポリシーへの同意や外部送信は発生しません。
+            </p>
+            <div class="reservation-form__success" role="status" tabindex="-1" hidden>
+              <p>予約デモが完了しました。</p>
+              <span>入力内容は保存・送信されていません。</span>
+            </div>
+          </form>
         </div>
       </section>
     </main>
 
     <footer class="site-footer">
-      <p>© 2026 Kohaku to Ao</p>
-      <p>This is a fictional website created for portfolio practice.</p>
+      <div class="site-footer__brand">
+        <img
+          src="./assets/logo/kohaku-mark-256.webp"
+          width="64"
+          height="64"
+          alt=""
+        />
+        <p>琥珀と青</p>
+      </div>
+      <div>
+        <p>架空の中華そば店を題材にしたポートフォリオ作品です。</p>
+        <p>© 2026 Kohaku to Ao</p>
+      </div>
+      <a class="text-link text-link--light" href="#top">ページの先頭へ</a>
     </footer>
 
+    <a class="mobile-reserve" href="#reservation">予約デモへ</a>
     <script src="./script.js" defer></script>
   </body>
 </html>
