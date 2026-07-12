@@ -1465,6 +1465,33 @@ a {
     overflow: hidden;
   }
 
+  .story-scroll.is-horizontal-enabled .story-scroll__sticky::before,
+  .story-scroll.is-horizontal-enabled .story-scroll__sticky::after {
+    position: absolute;
+    content: "";
+    pointer-events: none;
+  }
+
+  .story-scroll.is-horizontal-enabled .story-scroll__sticky::before {
+    inset: 0;
+    background:
+      radial-gradient(circle at 18% 46%, rgba(40, 73, 89, 0.78), transparent 28rem),
+      linear-gradient(108deg, rgba(16, 45, 61, 0.42), transparent 46%),
+      var(--color-indigo-deep);
+  }
+
+  .story-scroll.is-horizontal-enabled .story-scroll__sticky::after {
+    right: -9rem;
+    bottom: -12rem;
+    width: 34rem;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    background:
+      radial-gradient(circle at 35% 30%, rgba(255, 235, 190, 0.46), transparent 13%),
+      radial-gradient(circle, rgba(199, 138, 58, 0.82), rgba(116, 66, 20, 0.68) 68%, transparent 69%);
+    box-shadow: 0 0 110px rgba(199, 138, 58, 0.14);
+  }
+
   .story-scroll__intro {
     width: min(100%, calc(var(--container) + 5rem));
     margin: 0 auto;
@@ -1473,7 +1500,15 @@ a {
   }
 
   .story-scroll.is-horizontal-enabled .story-scroll__viewport {
+    position: relative;
+    z-index: 1;
     overflow: hidden;
+  }
+
+  .story-scroll.is-horizontal-enabled .story-scroll__intro,
+  .story-scroll.is-horizontal-enabled .story-scroll__progress {
+    position: relative;
+    z-index: 2;
   }
 
   .story-scroll__track {
@@ -1497,6 +1532,22 @@ a {
   .story-scroll.is-horizontal-enabled .story-card {
     height: 100%;
     min-height: 0;
+    color: var(--color-paper);
+    background: transparent;
+    backdrop-filter: none;
+  }
+
+  .story-scroll.is-horizontal-enabled .story-card--amber {
+    color: var(--color-paper);
+    border-color: rgba(229, 189, 120, 0.54);
+  }
+
+  .story-scroll.is-horizontal-enabled .story-card--amber h2 {
+    color: var(--color-amber-light);
+  }
+
+  .story-scroll.is-horizontal-enabled .story-card--amber::after {
+    border-color: rgba(229, 189, 120, 0.28);
   }
 
   .story-scroll.is-horizontal-enabled .story-scroll__progress {
