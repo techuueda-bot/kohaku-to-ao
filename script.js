@@ -31,6 +31,36 @@
     document.body.appendChild(motionButton);
   }
 
+  const opening = document.querySelector("[data-mobile-opening]");
+  const openingSkip = document.querySelector("[data-opening-skip]");
+  const mobileOpeningMedia = window.matchMedia("(max-width: 767px)");
+  let openingTimer;
+
+  const finishOpening = () => {
+    if (!(opening instanceof HTMLElement) || !opening.classList.contains("is-active")) return;
+
+    window.clearTimeout(openingTimer);
+    opening.classList.add("is-leaving");
+    document.body.classList.remove("is-opening");
+
+    window.setTimeout(() => {
+      opening.classList.remove("is-active", "is-leaving");
+      opening.setAttribute("aria-hidden", "true");
+    }, 480);
+  };
+
+  if (opening instanceof HTMLElement && mobileOpeningMedia.matches) {
+    const shouldSkipMotion = reducedMedia.matches || motionStopped;
+
+    if (!shouldSkipMotion) {
+      document.body.classList.add("is-opening");
+      opening.setAttribute("aria-hidden", "false");
+      opening.classList.add("is-active");
+      openingTimer = window.setTimeout(finishOpening, 1700);
+      openingSkip?.addEventListener("click", finishOpening);
+    }
+  }
+
   const header = document.querySelector("[data-header]");
   const menuButton = document.querySelector(".site-header__menu-button");
   const navigation = document.querySelector(".site-header__nav");
@@ -54,10 +84,85 @@
   });
 
   document.addEventListener("keydown", (event) => {
-    if (event.key === "Escape") {
+    if (event.key === "Escape" && navigation?.classList.contains("is-open")) {
       closeNavigation();
       menuButton?.focus();
     }
+  });
+
+  const menuDialog = document.querySelector("[data-menu-dialog]");
+  const menuDialogClose = document.querySelector("[data-menu-dialog-close]");
+  const menuDialogImage = document.querySelector("[data-menu-dialog-image]");
+  const menuDialogNumber = document.querySelector("[data-menu-dialog-number]");
+  const menuDialogTitle = document.querySelector("[data-menu-dialog-title]");
+  const menuDialogDescription = document.querySelector("[data-menu-dialog-description]");
+  const menuDialogNote = document.querySelector("[data-menu-dialog-note]");
+  const menuDialogPrice = document.querySelector("[data-menu-dialog-price]");
+  let lastMenuTrigger = null;
+
+  const menuDetails = {
+    kohaku: {
+      number: "01",
+      title: "中華そば 琥珀",
+      description: "澄んだ醤油の香りと、細麺のやさしい口あたり。鶏と魚介の余韻を静かに重ねます。",
+      note: "鶏清湯・魚介・細麺",
+      price: "980円",
+      image: "assets/images/hero-chuka-soba-960.webp",
+      alt: "深い青の器に盛られた中華そば 琥珀",
+    },
+    ao: {
+      number: "02",
+      title: "中華そば 青",
+      description: "青菜と香味油の清々しさを重ねた、軽やかな一杯。澄んだスープに緑の香りがほどけます。",
+      note: "鶏清湯・青菜・香味油",
+      price: "1,050円",
+      image: "assets/images/menu-ao-1200.webp",
+      alt: "青い器に青菜と鶏チャーシューを盛った中華そば 青",
+    },
+    season: {
+      number: "03",
+      title: "季節の一杯",
+      description: "旬の香りを、その日の空気に合わせて。今季は青柚子をきかせた数量限定の一杯です。",
+      note: "青柚子・季節の青菜・細麺",
+      price: "1,180円",
+      image: "assets/images/menu-season-1200.webp",
+      alt: "青い器に青柚子と季節の青菜を添えた限定中華そば",
+    },
+  };
+
+  const closeMenuDialog = () => {
+    if (menuDialog instanceof HTMLDialogElement && menuDialog.open) menuDialog.close();
+  };
+
+  document.querySelectorAll("[data-menu-id]").forEach((trigger) => {
+    trigger.addEventListener("click", () => {
+      if (!(menuDialog instanceof HTMLDialogElement)) return;
+      const detail = menuDetails[trigger.dataset.menuId];
+      if (!detail) return;
+
+      if (menuDialogImage instanceof HTMLImageElement) {
+        menuDialogImage.src = detail.image;
+        menuDialogImage.alt = detail.alt;
+      }
+      if (menuDialogNumber) menuDialogNumber.textContent = detail.number;
+      if (menuDialogTitle) menuDialogTitle.textContent = detail.title;
+      if (menuDialogDescription) menuDialogDescription.textContent = detail.description;
+      if (menuDialogNote) menuDialogNote.textContent = detail.note;
+      if (menuDialogPrice) menuDialogPrice.textContent = detail.price;
+
+      lastMenuTrigger = trigger;
+      menuDialog.showModal();
+    });
+  });
+
+  menuDialogClose?.addEventListener("click", closeMenuDialog);
+
+  menuDialog?.addEventListener("click", (event) => {
+    if (event.target === menuDialog) closeMenuDialog();
+  });
+
+  menuDialog?.addEventListener("close", () => {
+    lastMenuTrigger?.focus();
   });
 
   const revealObserver = new IntersectionObserver(

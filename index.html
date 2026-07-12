@@ -27,7 +27,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;500;600&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;500;600&amp;family=Zen+Kaku+Gothic+New:wght@400;500;700&amp;display=swap"
       rel="stylesheet"
     />
     <link
@@ -39,6 +39,24 @@
     <link rel="stylesheet" href="./style.css" />
   </head>
   <body class="p-home">
+    <div class="mobile-opening" data-mobile-opening aria-hidden="true">
+      <button class="mobile-opening__skip" type="button" data-opening-skip>
+        スキップ
+      </button>
+      <div class="mobile-opening__center">
+        <span class="mobile-opening__halo" aria-hidden="true"></span>
+        <img
+          class="mobile-opening__mark"
+          src="./assets/logo/kohaku-mark-256.webp"
+          width="112"
+          height="112"
+          alt=""
+        />
+        <p class="mobile-opening__brand">琥珀と青</p>
+        <p class="mobile-opening__copy">雨上がりに、心を整える一杯。</p>
+      </div>
+    </div>
+
     <a class="skip-link" href="#main-content">本文へ移動</a>
 
     <p class="demo-ribbon">
@@ -173,28 +191,37 @@
 
             <div class="menu__list">
               <article class="menu-item" data-reveal>
-                <p class="menu-item__number">01</p>
-                <div>
-                  <h3>中華そば 琥珀</h3>
-                  <p>澄んだ醤油の香りと、細麺のやさしい口あたり。</p>
-                </div>
-                <p class="menu-item__price">980円</p>
+                <button class="menu-item__trigger" type="button" data-menu-id="kohaku" aria-haspopup="dialog">
+                  <span class="menu-item__number">01</span>
+                  <span class="menu-item__copy">
+                    <span class="menu-item__name">中華そば 琥珀</span>
+                    <span class="menu-item__description">澄んだ醤油の香りと、細麺のやさしい口あたり。</span>
+                    <span class="menu-item__action">写真を見る</span>
+                  </span>
+                  <span class="menu-item__price">980円</span>
+                </button>
               </article>
               <article class="menu-item" data-reveal data-reveal-delay="0.08">
-                <p class="menu-item__number">02</p>
-                <div>
-                  <h3>中華そば 青</h3>
-                  <p>青菜と香味油の清々しさを重ねた、軽やかな一杯。</p>
-                </div>
-                <p class="menu-item__price">1,050円</p>
+                <button class="menu-item__trigger" type="button" data-menu-id="ao" aria-haspopup="dialog">
+                  <span class="menu-item__number">02</span>
+                  <span class="menu-item__copy">
+                    <span class="menu-item__name">中華そば 青</span>
+                    <span class="menu-item__description">青菜と香味油の清々しさを重ねた、軽やかな一杯。</span>
+                    <span class="menu-item__action">写真を見る</span>
+                  </span>
+                  <span class="menu-item__price">1,050円</span>
+                </button>
               </article>
               <article class="menu-item" data-reveal data-reveal-delay="0.16">
-                <p class="menu-item__number">03</p>
-                <div>
-                  <h3>季節の一杯</h3>
-                  <p>その日の空気に合わせて仕立てる、数量限定の味。</p>
-                </div>
-                <p class="menu-item__price">1,180円</p>
+                <button class="menu-item__trigger" type="button" data-menu-id="season" aria-haspopup="dialog">
+                  <span class="menu-item__number">03</span>
+                  <span class="menu-item__copy">
+                    <span class="menu-item__name">季節の一杯</span>
+                    <span class="menu-item__description">その日の空気に合わせて仕立てる、数量限定の味。</span>
+                    <span class="menu-item__action">写真を見る</span>
+                  </span>
+                  <span class="menu-item__price">1,180円</span>
+                </button>
               </article>
               <p class="menu__note">※価格・内容はポートフォリオ用の架空設定です。</p>
             </div>
@@ -389,6 +416,31 @@
         </div>
       </section>
     </main>
+
+    <dialog class="menu-dialog" data-menu-dialog aria-labelledby="menu-dialog-title">
+      <button class="menu-dialog__close" type="button" data-menu-dialog-close aria-label="写真を閉じる">
+        <span aria-hidden="true"></span>
+      </button>
+      <div class="menu-dialog__media">
+        <img
+          src="assets/images/hero-chuka-soba-960.webp"
+          width="960"
+          height="640"
+          alt=""
+          data-menu-dialog-image
+        />
+        <p class="menu-dialog__number" data-menu-dialog-number>01</p>
+      </div>
+      <div class="menu-dialog__body">
+        <p class="section-kicker">Menu detail / 一杯の景色</p>
+        <h2 id="menu-dialog-title" data-menu-dialog-title>中華そば 琥珀</h2>
+        <p data-menu-dialog-description>澄んだ醤油の香りと、細麺のやさしい口あたり。</p>
+        <div class="menu-dialog__meta">
+          <span data-menu-dialog-note>鶏清湯・魚介・細麺</span>
+          <strong data-menu-dialog-price>980円</strong>
+        </div>
+      </div>
+    </dialog>
 
     <footer class="site-footer">
       <div class="site-footer__brand">
